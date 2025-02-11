@@ -8,9 +8,14 @@ function add(numbers) {
     numbers = parts[1];
   }
 
-  const numArray = numbers
-    .split(new RegExp(`[${delimiter}\n]`)) // Split by the custom delimiter or new lines
-    .map(Number);
+  const numArray = numbers.split(new RegExp(`[${delimiter}\n]`)).map(Number);
+
+  const negativeNumbers = numArray.filter((num) => num < 0);
+  if (negativeNumbers.length > 0) {
+    throw new Error(
+      `negative numbers not allowed: ${negativeNumbers.join(", ")}`
+    );
+  }
 
   return numArray.reduce((sum, num) => sum + num, 0);
 }

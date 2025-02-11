@@ -86,3 +86,9 @@ test("should support custom delimiters specified at the beginning of the string"
 
   expect(result).toBe(expected);
 });
+
+//test 6
+test("should throw an exception for negative numbers with the message 'negative numbers not allowed'", () => {
+  const input = "-1,2,-3";
+  expect(() => add(input)).toThrow("negative numbers not allowed: -1, -3");
+});

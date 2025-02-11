@@ -53,3 +53,19 @@ test("should return the sum of two comma-separated numbers", () => {
 
   expect(result).toBe(expected);
 });
+
+//test4
+test("should return the sum when numbers are separated by commas and new lines", () => {
+  const input = "1\n2,3";
+  const expected = 6;
+  const result = add(input);
+
+  logTestResult(
+    "should return the sum when numbers are separated by commas and new lines",
+    input,
+    expected,
+    result
+  );
+
+  expect(result).toBe(expected);
+});

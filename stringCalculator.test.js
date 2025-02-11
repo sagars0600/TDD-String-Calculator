@@ -11,6 +11,7 @@ function logTestResult(testName, input, expected, result) {
   `);
 }
 
+//test 1
 test("should return 0 for an empty string", () => {
   const input = "";
   const expected = 0;
@@ -21,6 +22,7 @@ test("should return 0 for an empty string", () => {
   expect(result).toBe(expected);
 });
 
+//test 2
 test("should return the number itself when a single number is provided", () => {
   const input = "1";
   const expected = 1;
@@ -28,6 +30,22 @@ test("should return the number itself when a single number is provided", () => {
 
   logTestResult(
     "should return the number itself when a single number is provided",
+    input,
+    expected,
+    result
+  );
+
+  expect(result).toBe(expected);
+});
+
+//test 3
+test("should return the sum of two comma-separated numbers", () => {
+  const input = "1,2";
+  const expected = 3;
+  const result = add(input);
+
+  logTestResult(
+    "should return the sum of two comma-separated numbers",
     input,
     expected,
     result

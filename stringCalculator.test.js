@@ -69,3 +69,20 @@ test("should return the sum when numbers are separated by commas and new lines",
 
   expect(result).toBe(expected);
 });
+
+//test 5
+
+test("should support custom delimiters specified at the beginning of the string", () => {
+  const input = "//;\n1;2";
+  const expected = 3;
+  const result = add(input);
+
+  logTestResult(
+    "should support custom delimiters specified at the beginning of the string",
+    input,
+    expected,
+    result
+  );
+
+  expect(result).toBe(expected);
+});

@@ -8,7 +8,10 @@ function add(numbers) {
     numbers = parts[1];
   }
 
-  const numArray = numbers.split(new RegExp(`[${delimiter}\n]`)).map(Number);
+  const numArray = numbers
+    .split(new RegExp(`[${delimiter}\n]`))
+    .map(Number)
+    .filter((num) => num <= 1000); // Ignore numbers bigger than 1000
 
   const negativeNumbers = numArray.filter((num) => num < 0);
   if (negativeNumbers.length > 0) {

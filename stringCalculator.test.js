@@ -124,3 +124,30 @@ test("should support delimiters of any length", () => {
 
   expect(result).toBe(expected);
 });
+
+//test 9
+test("should support multiple delimiters", () => {
+  const input = "//[*][%]\n1*2%3";
+  const expected = 6;
+  const result = add(input);
+
+  logTestResult("should support multiple delimiters", input, expected, result);
+
+  expect(result).toBe(expected);
+});
+
+//test 10
+test("should support multiple delimiters with length longer than one character", () => {
+  const input = "//[***][%%%]\n1***2%%%3";
+  const expected = 6;
+  const result = add(input);
+
+  logTestResult(
+    "should support multiple delimiters with length longer than one character",
+    input,
+    expected,
+    result
+  );
+
+  expect(result).toBe(expected);
+});

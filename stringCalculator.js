@@ -1,12 +1,15 @@
+function startsWithCustomDelimiters(numbers) {
+  return numbers.startsWith("//");
+}
+
 function add(numbers) {
   if (numbers === "") return 0;
 
   let delimiters = [",", "\n"]; // Default delimiters: comma and newline
 
-  if (numbers.startsWith("//")) {
+  if (startsWithCustomDelimiters(numbers)) {
     const parts = numbers.split("\n", 2);
     const customDelimiterSection = parts[0].substring(2);
-
     const delimiterMatch = customDelimiterSection.match(/\[(.*?)\]/g);
 
     if (delimiterMatch) {
